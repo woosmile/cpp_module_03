@@ -17,6 +17,8 @@ void	tester(DiamondTrap &test)
 	test.beRepaired(10);
 	test.beRepaired(10);
 
+	test.whoAmI();
+
 	test.takeDamage(0);
 	test.takeDamage(32);
 	test.takeDamage(51);

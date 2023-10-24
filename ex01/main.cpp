@@ -16,6 +16,8 @@ void	tester(ScavTrap &test)
 	test.beRepaired(10);
 	test.beRepaired(10);
 	test.beRepaired(10);
+	
+	test.guardGate();
 
 	test.takeDamage(0);
 	test.takeDamage(32);

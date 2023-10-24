@@ -33,14 +33,18 @@ ClapTrap::~ClapTrap()
 
 void	ClapTrap::attack(const std::string& target)
 {
-	if (_ep > 0)
+	if (_ep <= 0 && _hp <= 0)
+		std::cout << "Not enough energy and hit points" << std::endl;
+	else if (_ep <= 0)
+		std::cout << "Not enough energy" << std::endl;
+	else if (_hp <= 0)
+		std::cout << "Not enough hit points" << std::endl;
+	else
 	{
 		_ep--;
 		std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << _dmg << " points of damage!" << std::endl;
 		std::cout << "ClapTrap " << _name << " Energy Points : " << _ep << std::endl;
 	}
-	else
-		std::cout << "Not enough energy." << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
@@ -66,7 +70,13 @@ void	ClapTrap::takeDamage(unsigned int amount)
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	if (_ep > 0)
+	if (_ep <= 0 && _hp <= 0)
+		std::cout << "Not enough energy and hit points" << std::endl;
+	else if (_ep <= 0)
+		std::cout << "Not enough energy" << std::endl;
+	else if (_hp <= 0)
+		std::cout << "Not enough hit points" << std::endl;
+	else
 	{
 		_hp = _hp + amount;
 		_ep--;
@@ -74,6 +84,4 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		std::cout << "ClapTrap " << _name << " Hit Points : " << _hp << std::endl;
 		std::cout << "ClapTrap " << _name << " Energy Points : " << _ep << std::endl;
 	}
-	else
-		std::cout << "Not enough energy" << std::endl;
 }

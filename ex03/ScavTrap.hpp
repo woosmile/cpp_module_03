@@ -5,6 +5,8 @@
 
 class ScavTrap : virtual public ClapTrap
 {
+	protected:
+		static const unsigned int	_scav_ep = 50;
 	public:
 		ScavTrap();
 		ScavTrap(const std::string name);
