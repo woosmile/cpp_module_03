@@ -1,4 +1,4 @@
-# cpp_module_03
+# CPP Module 03
 
 ## 학습 내용
 - 상속
